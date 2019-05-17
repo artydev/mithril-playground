@@ -1,7 +1,14 @@
 import "./styles.css";
 import m from "mithril";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
-
-
-
-m.render(document.getElementById("app"), "Ciao")
+function App() {
+  let comp = {
+    view() {
+      return [m(Header), m(Footer)];
+    }
+  };
+  return comp;
+}
+m.mount(document.getElementById("app"), App);
